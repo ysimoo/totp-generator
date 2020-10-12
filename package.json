@@ -3,9 +3,10 @@
   "version": "0.0.8",
   "description": "Generate TOTP tokens from key",
   "main": "index.js",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "repository": {
     "type": "git",
-    "url": "git@github.com:bellstrand/totp-generator.git"
+    "url": "https://github.com/ysimoo/totp-generator.git"
   },
   "scripts": {
     "test": "jest"
