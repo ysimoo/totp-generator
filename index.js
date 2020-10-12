@@ -2,11 +2,11 @@
 
 let JsSHA = require('jssha');
 
-module.exports = function getToken(key) {
+module.exports = function getToken(key, duration) {
 	let epoch, time, shaObj, hmac, offset, otp;
 	key = base32tohex(key);
 	epoch = Math.round(Date.now() / 1000.0);
-	time = leftpad(dec2hex(Math.floor(epoch / 30)), 16, '0');
+	time = leftpad(dec2hex(Math.floor(epoch / duration)), 16, '0');
 	shaObj = new JsSHA('SHA-1', 'HEX');
 	shaObj.setHMACKey(key, 'HEX');
 	shaObj.update(time);
